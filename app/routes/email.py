@@ -155,24 +155,3 @@ class Email:
         return api_object.get_attachment(db=self.db, account_id=account_id, email=email, attachment_id=attachment_id,
                                          message_id=message_id, thread_id=thread_id)
 
-    # @router.post("/assign-thread/")
-    # @catch_not_implemented_exception
-    # def assign_thread(self, thread_id: int = Query(..., alias="thread-id"),
-    #                   user_id: Optional[str] = Query(None, alias="user-id")):
-    #     api_object = serviceEmail()
-    #     # account_id = 2
-    #     # email = 'mahirmahbub7@gmail.com'
-    #     return api_object.assign_user_to_thread(db=self.db, user_id=user_id, thread_id=thread_id, user=self.user)
-    #
-    # @router.get("/get-assigned-owner/")
-    # @catch_not_implemented_exception
-    # def get_assigned_owner(self, thread_id: int = Query(..., alias="thread-id")):
-    #     api_object = serviceEmail()
-    #     return api_object.get_assigned_owner(db=self.db, thread_id=thread_id)
-    #
-    # @router.put("/change-status/")
-    # @catch_not_implemented_exception
-    # def change_status(self, thread_id: int = Query(..., alias="thread-id"),
-    #                   is_closed: bool = Query(..., alias="is-closed")):
-    #     api_object = serviceEmail()
-    #     return api_object.change_status(db=self.db, thread_id=thread_id, is_closed=is_closed)

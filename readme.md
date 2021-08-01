@@ -53,8 +53,6 @@ docker system prune -a --volumes
 
 DB credentials:
 
-    add new server
-    host name: db_campaign
     port: 54320
     db: postgres
     user: admin
@@ -72,36 +70,31 @@ Update Db and insert master data:
 python run_db.py auto
 python run_db.py data
 
-### The parsing of data and  loading of data to the database will happen while starting the fastapi server when "data_loader" table will have "true" status for "Movie Data Loading"
+# Added Gmail Support, Future Scope: Office360(outlook, hotmail), yahoo.
 
-For manual upload of data with parsing run in docker terminal:
+## Framework: FastAPI
 
-python parse.py 
+## DB: Postgre
 
-NB: ** manual parsing is not included optional "phrase 4", "phrase 4" only runs at startup.
+## Features
 
-When the database is ready with the parsed data, "data_loader" table will have "false" status for "Movie Data Loading" so that the data parsing & loading never happens again.
+- filtering
+  
+- syncing
+  
+- get thread and email details
+  
+- download attachment
+  
+- sent email and reply with attachment
 
-### Phrase 4 will run while starting the fastapi server when "data_loader" table will have "true" status for "Movie Rating Loading"
+- read email(automatic mark seen)
 
-change the db value for enable/disable phrase 4. 
+- thread view
 
-did not exposed an api for "data_loader" table's status change, because of maintaining exact api deliverables by the assignment requirements.
+NB: All the API are added for hubspot like interface
 
-total number of movies found in third party csv that has been provided: 475
+## Possible New Features(Future Scope)
 
-# API endpoints
-
-http://localhost:7003/movies?count={}&page={}
-
-http://localhost:7003/movie/{}
-
-For Source Code for Data Parsing and Data Upload to database, see:
-
-app/custom_classes/*
-
-Used Chain of Responsibility, Singletone, Repository.
-
-For API details please see: https://github.com/MahirMahbub/Wiki_Movies/blob/master/API%20Doc.pdf
-
-
+- User assignment to thread
+- Delete message
