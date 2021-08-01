@@ -3,7 +3,7 @@ version: "3.8"
 services:
   db:
       image: postgres:12.2
-      container_name:  Wiki-Postgres
+      container_name:  Email-Client-Postgres
       restart: always
       environment:
         POSTGRES_DB: postgres
@@ -15,27 +15,27 @@ services:
       ports:
         - 54320:5432
 
-  wiki_movie_backend:
+  email_client_backend:
     build: .
-    container_name:  WikiMovie
+    container_name:  EmailClient
     command: bash -c "uvicorn app.main:app --host 0.0.0.0 --port 7003 --reload"
     volumes:
-      - .:/srv/ocr_backend
+      - .:/srv/email_client_backend
     ports:
       - 7003:7003
     depends_on:
       - db
     env_file: .env
 
-  wiki_db_mutator:
+  email_client_db_mutator:
     build: .
-    container_name:  wiki-Db-Mutator
+    container_name:  email_client-Db-Mutator
     command: bash -c "python run_db.py auto"
     volumes:
-      - .:/srv/wiki_movie_backend
+      - .:/srv/email_client_backend
     env_file: .env
     depends_on:
-      - wiki_movie_backend
+      - email_client_backend
 
 volumes:
   db-data:
