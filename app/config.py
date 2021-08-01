@@ -5,7 +5,7 @@ from typing import List
 
 class AppConfig:
     # App name
-    APP_NAME = "EDN-Campaign"
+    APP_NAME = "Email-Client"
 
     # Environments (these are already in .env file, again initializing here because of Windows Machine)
     ENV_LOCAL = os.getenv("ENV_LOCAL", "local")
