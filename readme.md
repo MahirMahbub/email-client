@@ -98,3 +98,5 @@ NB: All the API are added for hubspot like interface
 
 - User assignment to thread
 - Delete message
+
+## Add credentials.json in app/custom_classes which will be achieved from google dev console project creation(https://console.cloud.google.com/home/)
