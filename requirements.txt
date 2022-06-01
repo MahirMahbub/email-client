@@ -17,7 +17,7 @@ future==0.18.2
 h11==0.11.0
 httpcore==0.12.3
 httplib2==0.19.1
-httpx==0.17.1
+httpx==0.23.0
 httpx-oauth==0.3.5
 idna==2.10
 makefun==1.11.3
